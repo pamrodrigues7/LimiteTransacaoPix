@@ -1,0 +1,46 @@
+﻿@model List<GestaoLimite>
+@{
+	ViewData["Title"] = "Listagem de limites de transação PIX";
+}
+<div class="text-center">
+	<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+		<a class="btn btn-primary" role="button" asp-controller="GestaoLimite" asp-action="Create">Adicionar novo limite</a>
+	</div>
+	<h1 class="display-4">Listagem de limites de transação PIX</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				
+				<th scope="col">CPF</th>
+				<th scope="col">Agencia</th>
+				<th scope="col">Conta</th>
+				<th scope="col">Limite Transação</th>
+				<th scope="col">Opções</th>
+			</tr>
+		</thead>
+		<tbody>
+			@if (Model?.Any() ?? false)
+			{
+				foreach (GestaoLimite gestaolimite in Model)
+				{
+					<tr>
+						<th scope="row">@gestaolimite.CPF</th>
+						<td>@gestaolimite.Agencia</td>						
+						<td>@gestaolimite.Conta</td>
+						<td>@gestaolimite.LimiteParaTransacao</td>
+						<td>
+							<a role="button" asp-controller="GestaoLimite" asp-action="Edit" asp-route-cpf="@gestaolimite.CPF">Editar</a>
+							<a type="button" asp-controller="GestaoLimite" asp-action="Delete" asp-route-cpf="@gestaolimite.CPF">Excluir</a>
+						
+						</td>
+					</tr>
+
+				}
+			}
+
+
+
+		</tbody>
+	</table>
+</div>

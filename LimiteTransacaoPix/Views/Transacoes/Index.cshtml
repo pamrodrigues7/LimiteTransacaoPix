@@ -1,0 +1,27 @@
+﻿@model Transacoes
+@{
+    ViewData["Title"] = "Realizar transação PIX";
+}
+
+<div class="text-center">
+
+    <h1 class="display-4">Realizar transação PIX</h1>
+
+
+</div>
+
+<form asp-controller="Transacoes" asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" asp-for="CPF" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="valorTransacao">Valor Transacao</label>
+        <input type="number" required step=".01" asp-for="Valor" class="form-control">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a class="btn btn-secondary" asp-controller="Home" asp-action="Index" role="button">Cancelar</a>
+</form>

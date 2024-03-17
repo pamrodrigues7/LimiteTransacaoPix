@@ -1,0 +1,13 @@
+﻿@model GestaoLimite
+@{
+    ViewData["Title"] = "Confirmação de exclusão de limites de transação PIX";
+}
+<form method="post" asp-controller="GestaoLimite" asp-action="DeleteConfirmed">
+    <input type="hidden" name="cpf" value="@Model.CPF" />
+    <div class="text-center">
+        <h3>Deseja seguir com a exclusão do limite de transação pix referente ao CPF: @Model.CPF</h3>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Confirmar</button>
+    <a class="btn btn-secondary" asp-controller="GestaoLimite" asp-action="Index">Cancelar</a>
+</form>

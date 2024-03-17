@@ -1,0 +1,37 @@
+﻿@model GestaoLimite
+
+@{
+    ViewData["Title"] = "Editar limites de transação PIX";
+}
+<div class="text-center">
+
+    <h1 class="display-4">Editar limites de transação PIX</h1>
+
+
+</div>
+
+<form asp-controller="GestaoLimite" asp-action="Edit" method="post">
+    <div class="form-group">
+        <label for="cpf">CPF</label>
+        <input type="text" asp-for="CPF" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="agencia">Agencia</label>
+        <input type="text" asp-for="Agencia" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="conta">Conta</label>
+        <input type="text" asp-for="Conta" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="limitePix">Limite Transação Pix</label>
+        <input type="number" asp-for="LimiteParaTransacao" class="form-control">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Salvar</button>
+    <a class="btn btn-secondary" asp-controller="GestaoLimite" asp-action="Index" role="button">Cancelar</a>
+</form>
