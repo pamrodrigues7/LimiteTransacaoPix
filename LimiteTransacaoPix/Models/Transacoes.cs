@@ -35,4 +35,9 @@ namespace LimiteTransacaoPix.Models
         #endregion
 
     }
+
+    public class TransacoesAPI 
+    {
+        public const string Create = "Create";
+    }
 }

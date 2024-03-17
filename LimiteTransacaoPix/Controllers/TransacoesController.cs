@@ -19,7 +19,7 @@ namespace LimiteTransacaoPix.Controllers
             return View();
         }
 
-        [HttpPost]
+        [HttpPost(TransacoesAPI.Create)]
         public async Task<IActionResult> Create(Transacoes transacao)
         {
             var transacaoCriadaESaldoLimite = await _repo.CreateAsync(transacao);
