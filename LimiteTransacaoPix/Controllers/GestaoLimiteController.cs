@@ -32,7 +32,7 @@ namespace LimiteTransacaoPix.Controllers
 			return View(gestaoLimite);
 		}
 
-        [HttpGet(GestaoLimiteAPI.Delete)]
+        [HttpGet]
 		public async Task<IActionResult> Delete(string cpf)
 		{
 			if (cpf is null)
@@ -46,7 +46,7 @@ namespace LimiteTransacaoPix.Controllers
 			return View(gestaoLimite);
         }
 
-		[HttpPost(GestaoLimiteAPI.DeleteConfirmed)]
+		[HttpPost]
 		public async Task<IActionResult> DeleteConfirmed(string cpf)
 		{
 			var gestaoLimite = await _repo.GetByCpfAsync(cpf);
@@ -57,7 +57,7 @@ namespace LimiteTransacaoPix.Controllers
             return RedirectToAction(index);
 		}
 
-        [HttpPost(GestaoLimiteAPI.Create)]
+        [HttpPost]
         public async Task<IActionResult> Create(GestaoLimite gestaoLimite)
         {
             var gestaoLimiteCriada = await _repo.CreateAsync(gestaoLimite);
@@ -68,7 +68,7 @@ namespace LimiteTransacaoPix.Controllers
             return RedirectToAction(index);
         }       
 
-        [HttpPost(GestaoLimiteAPI.Edit)]
+        [HttpPost]
         public async Task<IActionResult> Edit(GestaoLimite gestaoLimite)
         {
             var gestaoLimiteAtualizada = await _repo.UpdateAsync(gestaoLimite);
@@ -79,7 +79,7 @@ namespace LimiteTransacaoPix.Controllers
             return RedirectToAction(index);
         }
 
-        [HttpGet(GestaoLimiteAPI.GetListGestaoLimite)]
+        [HttpGet]
         public IActionResult GetListGestaoLimite()
         {
             _repo.GetListGestaoLimite();

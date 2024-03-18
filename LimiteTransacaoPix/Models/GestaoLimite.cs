@@ -22,13 +22,4 @@ namespace LimiteTransacaoPix.Models
         [DynamoDBProperty(typeof(DecimalConverterToDb))]
         public decimal LimiteParaTransacao { get; set; }
     }
-
-    public class GestaoLimiteAPI 
-    {
-        public const string Create = "Create";
-        public const string Edit = "Edit";
-        public const string GetListGestaoLimite = "GetListGestaoLimite";
-        public const string DeleteConfirmed = "DeleteConfirmed";
-        public const string Delete = "Delete";
-    }
 }
